@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:echowin.in)"
+      "WebFetch(domain:echowin.in)",
+      "Bash(npm install *)",
+      "Bash(npx shadcn@latest init --defaults)",
+      "WebFetch(domain:www.tradingview.com)",
+      "WebFetch(domain:s3.tradingview.com)",
+      "WebFetch(domain:in.tradingview.com)",
+      "WebFetch(domain:www.bseindia.com)",
+      "WebFetch(domain:groww.in)",
+      "WebSearch",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
