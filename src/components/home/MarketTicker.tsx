@@ -18,7 +18,7 @@ export function MarketTicker() {
   const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    if (!container.current) return;
+    if (!container.current || !resolvedTheme) return;
 
     container.current.innerHTML = "";
 
@@ -31,7 +31,7 @@ export function MarketTicker() {
       symbols: SYMBOLS,
       showSymbolLogo: true,
       colorTheme: resolvedTheme === "dark" ? "dark" : "light",
-      isTransparent: true,
+      isTransparent: false,
       displayMode: "adaptive",
       locale: "in",
     });
@@ -40,8 +40,8 @@ export function MarketTicker() {
   }, [resolvedTheme]);
 
   return (
-    <div className="w-full border-y border-border bg-muted/30 overflow-hidden">
-      <div ref={container} className="tradingview-widget-container" />
+    <div className="w-full overflow-hidden">
+      <div ref={container} className="tradingview-widget-container" suppressHydrationWarning />
     </div>
   );
 }

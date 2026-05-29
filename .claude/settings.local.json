@@ -10,7 +10,8 @@
       "WebFetch(domain:www.bseindia.com)",
       "WebFetch(domain:groww.in)",
       "WebSearch",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\Sai Kiran\\\\echowin_in\\\\src\\\\components\" -Recurse | Where-Object {$_.PSIsContainer} | Select-Object -ExpandProperty FullName | Sort-Object)"
     ]
   }
 }

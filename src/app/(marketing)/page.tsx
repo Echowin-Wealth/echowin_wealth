@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { MarketTicker } from "@/components/home/MarketTicker";
+import { AdvancedChart } from "@/components/home/AdvancedChart";
 import { TrustBadges } from "@/components/home/TrustBadges";
 import { OfferingsPreview } from "@/components/home/OfferingsPreview";
 import { CTABanner } from "@/components/home/CTABanner";
@@ -24,7 +25,8 @@ export default async function HomePage() {
         ctaUrl={heroContent.cta_url as string}
         nameChangeNotice={heroContent.name_change_notice as string}
       />
-      {/* <MarketTicker /> */}
+      <MarketTicker />
+      <AdvancedChart />
       <TrustBadges />
       <OfferingsPreview offerings={offerings} />
       <CTABanner />
