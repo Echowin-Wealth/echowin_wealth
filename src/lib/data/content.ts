@@ -40,9 +40,12 @@ export async function fetchAllPageContent(page: string) {
     if (error || !data?.length) return {};
 
     const result: Record<string, PageContentMap> = {};
-    for (const row of data) {
+    const rows = data as Pick<SiteContent, "section" | "key" | "value" | "value_json">[];
+    for (const row of rows) {
       if (!result[row.section]) result[row.section] = {};
-      result[row.section][row.key] = row.value_json ?? row.value ?? "";
+      result[row.section][row.key] = (row.value_json ?? row.value ?? "") as
+        | string
+        | Record<string, unknown>;
     }
     return result;
   } catch {
